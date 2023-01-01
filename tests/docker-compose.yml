@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  boutix-member-db-test:
+    image: postgres:14.6-alpine
+    container_name: boutix_members-test
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=boutix-members
+    restart: on-failure
+    ports:
+      - "5432:5432"
